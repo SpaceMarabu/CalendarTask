@@ -4,9 +4,6 @@ import datetime as dt
 h = cd.Holiday()
 r = cd.Reminder()
 c = cd.Calendar()
-r.add_remind('Shopping', '2022-02-28', '09:00')
-r.add_remind('OOP C# exam', '2022-02-26', '11:00')
-
 print(f'Today is {dt.datetime.today().date()}')
 h.today()
 r.today()
