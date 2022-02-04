@@ -147,8 +147,9 @@ class Calendar():
         elif answer == 'show reminds':
             self.r.show()
             return True
-        elif answer == 'back':
-            print('Ok.')
+        elif answer == 'exit':
+            print('Take care!')
+            exit()
             return True
         else:
             return False

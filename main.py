@@ -11,14 +11,14 @@ print(f'Today is {dt.datetime.today().date()}')
 h.today()
 r.today()
 classes = ('add holiday', 'delete holiday', 'change holiday', 'show holidays',
-           'add remind', 'delete remind', 'change remind', 'show reminds', 'back')
+           'add remind', 'delete remind', 'change remind', 'show reminds', 'exit')
 while True:
     print('I can do:', *classes, sep='\n')
     print('What do You want?')
     if c.do(str(input()).lower()):
-        print('Something else?')
+        print('Something else? (yes/no)')
     else:
-        print("Excuse me. I haven't understood. Try again?")
+        print("Excuse me. I haven't understood. Try again? (yes/no)")
     if str(input()).lower() in ('no', 'nope'):
         print('Take care!')
         break
