@@ -98,51 +98,42 @@ class Calendar():
         self.r = Reminder()
         self.h = Holiday()
 
+    @staticmethod
+    def quest_name(cls):
+        print(f'Type name of {cls}')
+        return str(input())
+
+    @staticmethod
+    def quest_date():
+        print('Type its date. format: yyyy-mm-dd')
+        return str(input())
+
+    @staticmethod
+    def quest_time():
+        print('Type its time. hh:mm')
+        return str(input())
+
     def do(self, answer):
         if answer == 'add holiday':
-            print('Type name of holiday')
-            name = str(input())
-            print('Type its date. format: yyyy-mm-dd')
-            date = str(input())
-            self.h.add(name, date)
+            self.h.add(self.quest_name('holiday'), self.quest_date())
             return True
         elif answer == 'change holiday':
-            print('Type name of holiday')
-            name = str(input())
-            print('Type its date. format: yyyy-mm-dd')
-            date = str(input())
-            self.h.change(name, date)
+            self.h.change(self.quest_name('holiday'), self.quest_date())
             return True
         elif answer == 'delete holiday':
-            print('Type name of holiday')
-            name = str(input())
-            self.h.delete(name)
+            self.h.delete(self.quest_name('holiday'))
             return True
         elif answer == 'show holidays':
             self.h.show()
             return True
         elif answer == 'add remind':
-            print('Type name of remind')
-            name = str(input())
-            print('Type its date. format: yyyy-mm-dd')
-            date = str(input())
-            print('Type its time. hh:mm')
-            time = str(input())
-            self.r.add_remind(name, date, time)
+            self.r.add_remind(self.quest_name('remind'), self.quest_date(), self.quest_time())
             return True
         elif answer == 'change remind':
-            print('Type name of remind')
-            name = str(input())
-            print('Type its date. format: yyyy-mm-dd')
-            date = str(input())
-            print('Type its time. hh:mm')
-            time = str(input())
-            self.r.change_remind(name, date, time)
+            self.r.change_remind(self.quest_name('remind'), self.quest_date(), self.quest_time())
             return True
         elif answer == 'delete remind':
-            print('Type name of remind')
-            name = str(input())
-            self.r.delete(name)
+            self.r.delete(self.quest_name('remind'))
             return True
         elif answer == 'show reminds':
             self.r.show()
@@ -150,6 +141,5 @@ class Calendar():
         elif answer == 'exit':
             print('Take care!')
             exit()
-            return True
         else:
             return False
